@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { ConceptFrame } from "@/components/concept-frame";
 import { ProposalLink } from "@/components/proposal-link";
 import { getProject, projects } from "@/lib/content";
@@ -24,7 +25,19 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProjectPage({
+export default function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  return (
+    <Suspense fallback={<ProjectFallback />}>
+      <ProjectContent params={params} />
+    </Suspense>
+  );
+}
+
+async function ProjectContent({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -83,6 +96,21 @@ export default async function ProjectPage({
             Get a proposal
           </ProposalLink>
         </div>
+      </article>
+    </main>
+  );
+}
+
+function ProjectFallback() {
+  return (
+    <main id="content" className="bg-white" aria-busy="true">
+      <article className="mx-auto max-w-3xl px-5 py-14 sm:py-20">
+        <p className="sr-only">Loading project</p>
+        <div className="h-4 w-24 rounded bg-mist" />
+        <div className="mt-8 h-3 w-32 rounded bg-mist" />
+        <div className="mt-6 h-12 w-4/5 rounded bg-mist" />
+        <div className="mt-8 h-5 w-full rounded bg-mist" />
+        <div className="mt-10 aspect-[16/10] rounded-2xl bg-mist" />
       </article>
     </main>
   );
