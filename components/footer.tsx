@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { formatPhone, nav, phoneHref, site, socialLinks } from "@/lib/site";
 
 export function Footer() {
@@ -10,7 +11,8 @@ export function Footer() {
     <footer className="bg-navy text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="text-sm font-semibold tracking-[0.12em]">
+          <BrandMark className="h-16 w-auto" />
+          <p className="mt-5 text-sm font-semibold tracking-[0.12em]">
             VANTAGE BRIDGE TECHNOLOGIES
           </p>
           <p className="mt-4 max-w-xs text-sm leading-6 text-white/70">

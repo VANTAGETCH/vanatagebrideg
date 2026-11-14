@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BrandMark } from "@/components/brand-mark";
 import { ProposalLink } from "@/components/proposal-link";
 import {
   formatPhone,
@@ -31,12 +32,19 @@ export function Header() {
         Skip to content
       </a>
       <div className="mx-auto flex max-w-7xl items-center gap-6 px-5 py-4">
-        <Link href="/" className="leading-none" onClick={() => setOpen(false)}>
-          <span className="block text-[13px] font-semibold tracking-[0.16em] sm:text-[15px]">
-            VANTAGE BRIDGE
-          </span>
-          <span className="mt-1 block text-[10px] font-semibold tracking-[0.22em] text-[#8eb6ff]">
-            TECHNOLOGIES
+        <Link
+          href="/"
+          className="flex min-w-0 items-center gap-3 leading-none"
+          onClick={() => setOpen(false)}
+        >
+          <BrandMark className="h-11 w-auto shrink-0 sm:h-14" eager />
+          <span>
+            <span className="block text-[13px] font-semibold tracking-[0.16em] sm:text-[15px]">
+              VANTAGE BRIDGE
+            </span>
+            <span className="mt-1 block text-[10px] font-semibold tracking-[0.22em] text-[#8eb6ff]">
+              TECHNOLOGIES
+            </span>
           </span>
         </Link>
 
