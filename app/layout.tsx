@@ -14,7 +14,7 @@ const title =
   "Web development company in Accra, Ghana | Vantage Bridge Technologies";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vantagebridge.com"),
+  metadataBase: new URL(site.url),
   title: {
     default: title,
     template: "%s | Vantage Bridge Technologies",
@@ -23,9 +23,24 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description: site.description,
+    url: "/",
     locale: "en_GH",
     type: "website",
     siteName: site.name,
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Vantage Bridge Technologies, web development in Accra, Ghana",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: site.description,
+    images: ["/og.png"],
   },
 };
 
@@ -45,7 +60,7 @@ const jsonLd = {
     "@type": "Organization",
     name: site.parent,
   },
-  url: "https://vantagebridge.com",
+  url: site.url,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -20,7 +20,7 @@ export const guarantees = [
   },
   {
     title: "Fast by default",
-    body: "Key pages meet an agreed mobile speed target at launch, or we fix them free.",
+    body: "Key pages reach a Google PageSpeed score of 85 or higher on mobile at launch, or we fix them free.",
   },
   {
     title: "30-day fix window",

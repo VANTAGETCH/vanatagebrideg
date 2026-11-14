@@ -2,6 +2,22 @@ import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
 import { formatPhone, nav, phoneHref, site, socialLinks } from "@/lib/site";
 
+function ParentName({ className }: { className?: string }) {
+  if (!site.parentUrl) {
+    return <span className={className}>{site.parent}</span>;
+  }
+  return (
+    <a
+      href={site.parentUrl}
+      className={`underline-offset-4 hover:text-white hover:underline ${className ?? ""}`}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {site.parent}
+    </a>
+  );
+}
+
 export function Footer() {
   const call = phoneHref(site.phone);
   const phoneLabel = formatPhone(site.phone);
@@ -19,7 +35,7 @@ export function Footer() {
             {site.tagline}
           </p>
           <p className="mt-4 text-sm leading-6 text-white/70">
-            A division of {site.parent}
+            A division of <ParentName />
             {site.registration ? ` · ${site.registration}` : ""}
           </p>
         </div>
@@ -34,7 +50,9 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>{site.parent}</li>
+            <li>
+              <ParentName />
+            </li>
           </ul>
         </div>
 

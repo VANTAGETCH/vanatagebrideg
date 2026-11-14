@@ -9,7 +9,9 @@
 export const site = {
   name: "Vantage Bridge Technologies",
   shortName: "Vantage Bridge",
+  url: "https://vantagebridge.vercel.app",
   parent: "Vantage Bridge Enterprise",
+  parentUrl: "" as string,
   tagline: "Engineering the Future. Empowering Businesses.",
   description:
     "Fast, mobile-first business websites that rank on Google and turn visitors into calls, bookings and enquiries. Fixed price and a fixed launch date. Accra, Ghana.",
