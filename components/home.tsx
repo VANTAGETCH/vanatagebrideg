@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ConceptFrame } from "@/components/concept-frame";
 import { EnquiryForm } from "@/components/enquiry-form";
@@ -39,7 +40,7 @@ export function HomePage() {
   return (
     <main id="content">
       <section className="bg-navy text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-8 sm:pb-20 sm:pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:pb-24 lg:pt-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-8 sm:pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-16 lg:pt-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
               Web development company in Accra, Ghana
@@ -82,22 +83,32 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-navy-2 p-6 sm:p-8">
-            <h2 className="text-lg font-semibold">Our four guarantees</h2>
-            <ul className="mt-6 space-y-5">
-              {guarantees.map((item) => (
-                <li key={item.title} className="flex gap-3">
-                  <Check className="mt-0.5 text-[#8eb6ff]" />
-                  <div>
-                    <p className="font-semibold">{item.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-white/70">
-                      {item.body}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <figure className="overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src="/photos/hero.jpg"
+              alt="A designer building a website layout on a desktop screen."
+              width={2560}
+              height={1440}
+              preload
+              quality={90}
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="h-auto w-full object-cover"
+            />
+          </figure>
+        </div>
+        <div className="mx-auto max-w-7xl px-5 pb-16 lg:pb-20">
+          <h2 className="text-lg font-semibold">Our four guarantees</h2>
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {guarantees.map((item) => (
+              <li key={item.title} className="flex gap-3">
+                <Check className="mt-0.5 text-[#8eb6ff]" />
+                <div>
+                  <p className="font-semibold">{item.title}</p>
+                  <p className="mt-1 text-sm leading-6 text-white/70">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -285,11 +296,26 @@ export function HomePage() {
 
       <section id="process" className="scroll-mt-24 bg-mist">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:py-28">
-          <SectionLabel>How we work</SectionLabel>
-          <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-[1.15] tracking-[-0.03em] sm:text-4xl">
-            Most business websites go live in about six weeks, with you
-            approving every stage.
-          </h2>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <SectionLabel>How we work</SectionLabel>
+              <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-[1.15] tracking-[-0.03em] sm:text-4xl">
+                Most business websites go live in about six weeks, with you
+                approving every stage.
+              </h2>
+            </div>
+            <figure className="overflow-hidden rounded-2xl border border-line">
+              <Image
+                src="/photos/review.jpg"
+                alt="Two colleagues reviewing a website design on a laptop."
+                width={2000}
+                height={1500}
+                quality={90}
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </figure>
+          </div>
           <ol className="mt-12 grid gap-8 border-line sm:grid-cols-2 lg:grid-cols-6 lg:border-t lg:pt-6">
             {steps.map((step) => (
               <li key={step.title} className="border-t border-line pt-4 lg:border-t-0 lg:pt-0">
@@ -403,6 +429,17 @@ export function HomePage() {
       <section id="start" className="scroll-mt-24 bg-mist">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:py-28">
           <div>
+            <figure className="mb-8 overflow-hidden rounded-2xl border border-line">
+              <Image
+                src="/photos/consult.jpg"
+                alt="A consultant at a desk with a website wireframe on a laptop."
+                width={2000}
+                height={1500}
+                quality={90}
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </figure>
             <SectionLabel>Start a project</SectionLabel>
             <h2 className="mt-3 text-3xl font-semibold leading-[1.15] tracking-[-0.03em] sm:text-4xl">
               Tell us what you want to build.
