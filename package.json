@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prepare": "sh scripts/install-ship-hook.sh",
     "start": "next start",
     "lint": "eslint"
   },

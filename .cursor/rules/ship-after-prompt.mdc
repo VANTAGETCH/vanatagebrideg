@@ -1,14 +1,16 @@
 ---
-description: After each prompt that changes the project, commit, push, and deploy
+description: After each commit, push main and deploy production
 alwaysApply: true
 ---
 
-# Ship after every prompt
+# Ship after every commit
 
-When a prompt changes project files, finish by shipping that work:
+A post-commit hook pushes the current branch to `origin`. On `main`, with a clean worktree, it deploys production with `vercel deploy --prod --yes`.
+
+When a prompt changes project files:
 
 1. Commit the change. Leave secrets out (`.env*`, credentials, `.vercel`).
-2. Push `main` to `origin`.
-3. Deploy production with `vercel deploy --prod --yes`.
+2. Read the hook output. If the push or the production deploy did not finish, do that step yourself.
+3. Skip the commit when there is nothing new to commit.
 
-Skip the commit and push when there is nothing new to commit. Deploy after a push that contains site changes. Never force-push and never skip hooks.
+Never force-push and never skip hooks.
