@@ -39,61 +39,60 @@ export function HomePage() {
   return (
     <main id="content">
       <section className="bg-navy text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-8 sm:pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-16 lg:pt-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-              Web development company in Accra, Ghana
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              <a
-                href="#services"
-                className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-navy"
-              >
-                Websites
-              </a>
-              <a
-                href="#services"
-                className="rounded-full border border-white/25 px-4 py-1.5 text-sm text-white"
-              >
-                Online stores
-              </a>
-              <a
-                href="#services"
-                className="rounded-full border border-white/25 px-4 py-1.5 text-sm text-white"
-              >
-                Web apps
-              </a>
-            </div>
-            <h1 className="mt-6 max-w-xl text-[2.6rem] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-6xl">
-              Websites that bring Ghanaian businesses customers.
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-7 text-white/75 sm:text-lg">
-              Fast, mobile-first business websites that rank on Google and turn
-              visitors into calls, bookings and enquiries, built on a fixed
-              price and a fixed launch date.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ProposalLink need="business-website" className={primaryButton}>
-                Start my website
-              </ProposalLink>
-              <a href="#start" className={darkOutlineButton}>
-                Book a free consultation
-              </a>
-            </div>
-          </div>
-
-          <figure className="overflow-hidden rounded-2xl border border-white/10">
+        <div className="mx-auto max-w-7xl px-5 pb-12 pt-8 sm:pt-12 lg:pb-16 lg:pt-16">
+          <div className="relative min-h-[34rem] overflow-hidden rounded-2xl sm:min-h-[38rem]">
             <Image
               src="/photos/hero.jpg"
               alt="A designer building a website layout on a desktop screen."
-              width={2560}
-              height={1440}
+              fill
               preload
               quality={90}
-              sizes="(min-width: 1024px) 46vw, 100vw"
-              className="h-auto w-full object-cover"
+              sizes="(min-width: 1280px) 1216px, 100vw"
+              className="object-cover object-[68%_center]"
             />
-          </figure>
+            <div className="absolute inset-0 bg-[#07111f]/72 sm:bg-transparent sm:bg-gradient-to-r sm:from-[#07111f]/92 sm:via-[#07111f]/72 sm:to-[#07111f]/25" />
+            <div className="relative z-10 flex min-h-[34rem] max-w-2xl flex-col justify-center px-6 py-12 sm:min-h-[38rem] sm:px-10 lg:px-14">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                Web development company in Accra, Ghana
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                <a
+                  href="#services"
+                  className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-navy"
+                >
+                  Websites
+                </a>
+                <a
+                  href="#services"
+                  className="rounded-full border border-white/25 px-4 py-1.5 text-sm text-white"
+                >
+                  Online stores
+                </a>
+                <a
+                  href="#services"
+                  className="rounded-full border border-white/25 px-4 py-1.5 text-sm text-white"
+                >
+                  Web apps
+                </a>
+              </div>
+              <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-6xl">
+                Websites that bring Ghanaian businesses customers.
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-7 text-white/85 sm:text-lg">
+                Fast, mobile-first business websites that rank on Google and turn
+                visitors into calls, bookings and enquiries, built on a fixed
+                price and a fixed launch date.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <ProposalLink need="business-website" className={primaryButton}>
+                  Start my website
+                </ProposalLink>
+                <a href="#start" className={darkOutlineButton}>
+                  Book a free consultation
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="mx-auto max-w-7xl px-5 pb-16 lg:pb-20">
           <h2 className="text-lg font-semibold">Our four guarantees</h2>
