@@ -12,7 +12,6 @@ import {
   packages,
   projects,
   services,
-  stack,
   steps,
   trust,
 } from "@/lib/content";
@@ -325,17 +324,6 @@ export function HomePage() {
               </li>
             ))}
           </ol>
-          <div className="mt-10 flex flex-wrap items-center gap-2">
-            <p className="mr-1 text-sm text-muted">Built with</p>
-            {stack.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-line bg-white px-3 py-1 text-xs font-medium"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 

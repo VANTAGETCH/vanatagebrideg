@@ -250,17 +250,6 @@ export const steps = [
   },
 ];
 
-export const stack = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Supabase",
-  "Node.js",
-  "Tailwind CSS",
-  "Vercel",
-  "Figma",
-];
-
 export const carePlans = [
   {
     name: "Care",
