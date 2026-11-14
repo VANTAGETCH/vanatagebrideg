@@ -1,0 +1,14 @@
+---
+description: After each prompt that changes the project, commit, push, and deploy
+alwaysApply: true
+---
+
+# Ship after every prompt
+
+When a prompt changes project files, finish by shipping that work:
+
+1. Commit the change. Leave secrets out (`.env*`, credentials, `.vercel`).
+2. Push `main` to `origin`.
+3. Deploy production with `vercel deploy --prod --yes`.
+
+Skip the commit and push when there is nothing new to commit. Deploy after a push that contains site changes. Never force-push and never skip hooks.
